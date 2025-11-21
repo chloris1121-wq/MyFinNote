@@ -38,8 +38,8 @@ public class User {
         this.passwordHash = passwordHash;
         this.nickname = nickname;
         // userId는 DB에서 자동으로, createdAt/updatedAt은 아래 초기값으로 설정됨
-        this.createdAt = LocalDateTime.now(); // ⭐ 초기값 재설정
-        this.updatedAt = LocalDateTime.now(); // ⭐ 초기값 재설정
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate

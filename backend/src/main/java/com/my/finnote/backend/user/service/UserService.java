@@ -4,6 +4,7 @@ import com.my.finnote.backend.user.domain.User;
 import com.my.finnote.backend.user.dto.request.UserSignUpRequest;
 import com.my.finnote.backend.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UserRepository userRepository;
+    private final UserRepository userRepository; // DB 연결
     private final PasswordEncoder passwordEncoder;
 
     public User signUp(UserSignUpRequest request) {
@@ -22,7 +23,7 @@ public class UserService {
 
         User newUser = new User(
                 request.getEmail(),
-                passwordHash,
+                encodedPassword,
                 request.getNickname()
         );
 

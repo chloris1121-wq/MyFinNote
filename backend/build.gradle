@@ -28,6 +28,7 @@ dependencies {
     // 1. Spring Boot Core & Web
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // JPA (DB ORM)
     implementation 'org.springframework.boot:spring-boot-starter-web'      // REST API
+    implementation 'org.springframework.boot:spring-boot-starter-security' // hash 암호
 
     // 2. PostgreSQL DB Driver
     runtimeOnly 'org.postgresql:postgresql'
